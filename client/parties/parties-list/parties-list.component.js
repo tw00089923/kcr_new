@@ -7,12 +7,17 @@ angular.module('socially').directive('partiesList', function () {
       $reactive(this).attach($scope);
 
       this.newParty = {};
+      this.perPage = 3;
 
       this.subscribe('parties');
 
       this.helpers({
         parties: () => {
           return Parties.find({});
+        },
+        page: 1,
+        sort: {
+          name: 1
         }
       });
 
