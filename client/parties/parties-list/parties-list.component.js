@@ -9,8 +9,6 @@ angular.module('socially').directive('partiesList', function () {
       this.newParty = {};
       this.perPage = 3;
 
-      this.subscribe('parties');
-
       this.helpers({
         parties: () => {
           return Parties.find({});
@@ -19,6 +17,16 @@ angular.module('socially').directive('partiesList', function () {
         sort: {
           name: 1
         }
+      });
+
+      this.subscribe('parties', () => {
+        return [
+          {
+            limit: parseInt(this.perPage),
+            skip: parseInt((this.page - 1) * this.perPage),
+            sort: this.sort
+          }
+        ]
       });
 
       this.addParty = () => {
