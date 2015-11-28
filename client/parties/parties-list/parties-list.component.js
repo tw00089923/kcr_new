@@ -13,6 +13,9 @@ angular.module('socially').directive('partiesList', function () {
         parties: () => {
           return Parties.find({}, { sort : this.sort });
         },
+        partiesCount: () => {
+          return Counts.get('numberOfParties');
+        },
         page: 1,
         sort: {
           name: 1
