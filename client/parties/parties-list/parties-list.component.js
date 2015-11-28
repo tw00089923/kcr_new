@@ -11,7 +11,7 @@ angular.module('socially').directive('partiesList', function () {
 
       this.helpers({
         parties: () => {
-          return Parties.find({});
+          return Parties.find({}, { sort : this.sort });
         },
         page: 1,
         sort: {
