@@ -24,6 +24,8 @@ angular.module('socially').directive('partiesList', function () {
         searchText: ''
       });
 
+      this.subscribe('users');
+
       this.subscribe('parties', () => {
         return [
           {
