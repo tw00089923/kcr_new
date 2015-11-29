@@ -24,7 +24,10 @@ angular.module('socially').directive('partiesList', function () {
         sort: {
           name: 1
         },
-        searchText: ''
+        searchText: '',
+        isLoggedIn: () => {
+          return Meteor.userId() !== null;
+        }
       });
 
       this.subscribe('users');
