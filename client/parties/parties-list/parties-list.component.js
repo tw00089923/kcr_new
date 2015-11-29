@@ -8,6 +8,7 @@ angular.module('socially').directive('partiesList', function () {
 
       this.newParty = {};
       this.perPage = 3;
+      this.orderProperty = '1';
 
       this.helpers({
         parties: () => {
@@ -44,6 +45,12 @@ angular.module('socially').directive('partiesList', function () {
 
       this.pageChanged = (newPage) => {
         this.page = newPage;
+      };
+
+      this.updateSort = () => {
+        this.sort = {
+          name: parseInt(this.orderProperty)
+        }
       };
     }
   }
