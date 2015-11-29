@@ -27,6 +27,9 @@ angular.module('socially').directive('partiesList', function () {
         searchText: '',
         isLoggedIn: () => {
           return Meteor.userId() !== null;
+        },
+        currentUserId: () => {
+          return Meteor.userId();
         }
       });
 
