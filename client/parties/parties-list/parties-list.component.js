@@ -20,7 +20,8 @@ angular.module('socially').directive('partiesList', function () {
         page: 1,
         sort: {
           name: 1
-        }
+        },
+        searchText: ''
       });
 
       this.subscribe('parties', () => {
@@ -29,7 +30,8 @@ angular.module('socially').directive('partiesList', function () {
             limit: parseInt(this.perPage),
             skip: parseInt((this.page - 1) * this.perPage),
             sort: this.sort
-          }
+          },
+          this.searchText
         ]
       });
 
