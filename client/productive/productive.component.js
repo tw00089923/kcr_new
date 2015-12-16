@@ -16,9 +16,24 @@ angular.module('socially').directive('productive', function () {
     
 
       $reactive(this).attach($scope);
-      
-      $scope.ad = 3;
-      
+
+
+       $scope.myDate = new Date();
+       $scope.minDate = new Date(
+
+      $scope.myDate.getFullYear(),
+      $scope.myDate.getMonth() - 2,
+      $scope.myDate.getDate());
+
+
+  $scope.maxDate = new Date(
+      $scope.myDate.getFullYear(),
+      $scope.myDate.getMonth() + 2,
+      $scope.myDate.getDate());
+
+       $scope.lines = ('201 202 203 204 205 206 207 208 209 210').split(' ').map(function(name) {
+        return { ss : name};
+      });
 
       $scope.items = [1,2,3,4,5];
       $scope.selected = [];

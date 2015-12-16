@@ -1,26 +1,43 @@
 
-{{ad}}
+{{ad}}{{myDate}}
+<div ng-repeat="line in lines">
+ Step {{line.index}} status : {{line.ss}}
+</div>
+<br>
+
 <md-content layout="row" layout-align="center center" layout-fill layout-margin>
 
 	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2" layout-fill>
 	<md-toolbar layout="column">
 	      <div class="md-toolbar-tools" >
-	        <h2> Create a new party sadada asda</h2>
+	        <h2> 生產日報表輸入</h2>
 	        <span flex></span>
 	      </div>
 	</md-toolbar>
 
-	<md-content md-theme="docs-dark" layout="row" layout-padding>    
+	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch>
+	    
 	      <md-input-container flex>
-	        <label>Title</label>
-	        <input ng-model="user.title">
+
+	      <label>線別</label>
+         	 <md-select ng-model="user.lines">
+              <md-option ng-repeat="line in lines" value="{{line.ss}}">
+                {{line.ss}}
+              </md-option>
+            </md-select>
+	       
 	      </md-input-container>
 	      <md-input-container flex>
 	        <label>Email</label>
 	        <input ng-model="user.email" type="email">
 	      </md-input-container>
-	      
-  	</md-content>
+	 	 <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+       	 md-min-date="minDate" md-max-date="maxDate">
+        	</md-datepicker>
+    </md-content>
+
+
+
 
 	<div>
 		<md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
@@ -30,10 +47,11 @@
 	
 
 	<div>
-	  <md-button ng-click="dynamicTheme = 'default'">Default</md-button>
+	  <md-button class="md-primary" ng-click="dynamicTheme = 'default'">Default</md-button>
 	  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
+	  <md-button ng-click="dynamicTheme = 'docs-dark'">docs-dark</md-button>
 		  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
-		  	<md-button class="md-primary">I'm dynamic</md-button>
+		  	<md-button class="md-primary">I'm dynamic &nbsp; {{dynamicTheme }}</md-button>
 		  </div>
 	</div>
 
