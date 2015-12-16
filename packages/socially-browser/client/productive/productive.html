@@ -1,0 +1,17 @@
+
+{{ad}}
+
+<div style="max-width: 600px;">
+<md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> Create a new party</h2>
+        <span flex></span>
+      </div>
+</md-toolbar>
+
+</div>
+
+
+<md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+  <span md-highlight-text="searchText">{{item.display}}</span>
+</md-autocomplete>

@@ -5,8 +5,11 @@ angular.module('socially').directive('partiesList', function () {
       if (Meteor.isCordova) {
         return '/packages/socially-mobile/client/parties/parties-list/parties-list.html';
       }
+      else{
+       return '/packages/socially-browser/client/parties/parties-list/parties-list.html';
+      }
 
-      return '/packages/socially-browser/client/parties/parties-list/parties-list.html';
+
     },
     controllerAs: 'partiesList',
     controller: function ($scope, $reactive, $mdDialog, $filter) {
@@ -14,6 +17,7 @@ angular.module('socially').directive('partiesList', function () {
 
       this.perPage = 3;
       this.orderProperty = '1';
+
 
       this.helpers({
         parties: () => {
@@ -86,7 +90,7 @@ angular.module('socially').directive('partiesList', function () {
         },
         zoom: 8
       };
-
+      $scope.ad = this.subscribe('users');
       this.subscribe('users');
 
       this.subscribe('parties', () => {
@@ -159,6 +163,13 @@ angular.module('socially').directive('partiesList', function () {
           clickOutsideToClose: true
         });
       };
+
+      this.openit = function(){
+
+       $mdSidenav('right').toggle();
+
+      };
+      
 
       this.isRSVP = (rsvp, party) => {
         if (Meteor.userId() == null) {

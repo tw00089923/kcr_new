@@ -1,8 +1,8 @@
-angular.module('socially.browser').directive('login', function() {
+angular.module("socially.browser").directive('d3', function() {
   return {
     restrict: 'E',
-    templateUrl: '/packages/socially-browser/client/auth/login/login.html',
-    controllerAs: 'login',
+    templateUrl: '/packages/socially-browser/client/d3/d3.html',
+    controllerAs: 'd3',
     controller: function ($scope, $reactive, $state) {
       $reactive(this).attach($scope);
 
@@ -26,3 +26,5 @@ angular.module('socially.browser').directive('login', function() {
     }
   }
 });
+
+

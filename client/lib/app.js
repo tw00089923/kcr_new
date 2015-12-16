@@ -8,7 +8,9 @@ let modulesToLoad =  [
   'ngFileUpload',
   'ngImgCrop',
   'xeditable',
-  'angular-sortable-view'
+  'angular-sortable-view',
+  'ngMessages'
+
 ];
 
 if (Meteor.isCordova) {
@@ -19,6 +21,13 @@ else {
 }
 
 angular.module('socially', modulesToLoad);
+
+angular.module('socially').config(function($mdThemingProvider) {
+    
+      $mdThemingProvider.theme('docs-dark', 'default')
+      .primaryPalette('yellow')
+      .dark();
+  });
 
 angular.module('socially').config(($mdIconProvider) => {
   $mdIconProvider

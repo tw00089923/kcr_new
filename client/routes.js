@@ -25,6 +25,14 @@ angular.module('socially')
         url: '/login',
         template: '<login></login>'
       })
+      .state('productive', {
+        url: '/productive',
+        template: '<productive></productive>'
+      })
+      .state('d3', {
+        url: '/d3',
+        template: '<d3></d3>'
+      })
       .state('register', {
         url: '/register',
         template: '<register></register>'

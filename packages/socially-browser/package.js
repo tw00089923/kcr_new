@@ -34,7 +34,10 @@ Package.onUse(function(api) {
     'client/parties/party-details/party-details.import.less',
     'client/parties/parties-list/parties-list.import.less',
     'client/parties/add-new-party-modal/add-new-party-modal.import.less',
-    'client/styles/main.less'
+    'client/styles/main.less',
+    'client/d3/d3.component.js',
+    'client/d3/d3.html',
+    'client/productive/productive.html'
   ], 'client');
 });
 

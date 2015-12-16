@@ -1,10 +1,10 @@
-<md-content flex layout="row" class="ma-parties-list">
+<md-content flex layout="row" class="ma-parties-list" >
   <div layout="row" flex>
     <div flex="50">
       <div>
         <div layout-padding layout="row">
           <md-input-container style="width:50%;margin-right:10px;">
-            <label>Search</label>
+            <label>Search </label>     
             <input type="text" ng-model="partiesList.searchText" placeholder="Search">
           </md-input-container>
           <md-select ng-model="partiesList.orderProperty" placeholder="Sort Order" md-on-close="partiesList.updateSort()">
@@ -63,8 +63,9 @@
             </md-card-content>
           </md-card>
         </div>
+            {{perPage}}
       </md-content>
-
+         
     </div>
     <div flex="50" layout="row" style="min-height:300px;">
       <ui-gmap-google-map options="partiesList.map.options" center="partiesList.map.center" zoom="partiesList.map.zoom" flex layout="row">

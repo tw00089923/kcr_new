@@ -1,1 +1,2 @@
-angular.module('socially.browser', []);
+angular.module("socially.browser",[]);
+

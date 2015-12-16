@@ -9,6 +9,33 @@ div[ui-view] > * {
   width: 100%;
 }
 
+bblack{
+	background-color: black;
+}
+
+.selectdemoBasicUsage md-input-container {
+  margin-right: 10px; }
+
+.inputdemoIcons {
+  /*
+.right-icon {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  left: auto;
+  margin-top: 0;
+}
+*/ }
+  .inputdemoIcons .inputIconDemo {
+    min-height: 48px; }
+  .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+    color: green; }
+  .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
+    color: dodgerblue; }
+  .inputdemoIcons md-input-container.md-input-invalid > md-icon.email,
+  .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
+    color: red; }
+
 @import "navbar.import.less";
 @import "../parties/parties-list/parties-list.import.less";
 @import "../parties/party-details/party-details.import.less";

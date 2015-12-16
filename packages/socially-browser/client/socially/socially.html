@@ -1,13 +1,72 @@
 <md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding>
+
+ 
+  <md-menu md-offset="20 100">
+    <md-button class="md-icon-button " aria-label="Settings" ng-click="socially.openMenu($mdOpenMenu, $event)">
+      <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
+    </md-button> 
+      <md-menu-content width="4" >
+        <md-menu-item>
+          <md-button ng-href="/productive" >
+            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+            生產日報表
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-item>
+          <md-button ng-href="/d3" >
+            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+            日曆
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-item>
+          <md-button disabled="disabled" ng-click="socially.checkVoicemail()">
+            <md-icon md-svg-icon="call:voicemail"> New ideal</md-icon>
+            Check voicemail
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="socially.toggleNotifications()">
+            <md-icon md-svg-icon="social:notifications-{{socially.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+            {{socially.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+
+  </md-menu>
   <h2>
-    <a ui-sref="parties"><span class="md-title">Socially</span></a>
+    <a ui-sref="parties"><span class="md-title ">KCR</span></a>
   </h2>
   <span flex></span>
+
+
   <div class="navbar-right navbar-text">
-    <md-button ng-href="/login" ng-hide="socially.isLoggedIn">Login</md-button>
+    
+    <md-button ng-href="/login" ng-hide="socially.isLoggedIn">Login </md-button>
     <md-button ng-href="/register" ng-hide="socially.isLoggedIn">Sign up</md-button>
     <div ng-show="socially.isLoggedIn">{{ socially.currentUser | displayName }}</div>
     <md-button ng-click="socially.logout()" ng-show="socially.isLoggedIn">Logout</md-button>
+    
   </div>
 </md-toolbar>
+
+<div>
+
+{{adad}}
+</div>
+
+
+
+
+
+
+
+
+<div layout="row" layout-xs="column">
+
+
 <div ui-view flex-gt-sm layout-gt-sm="row"></div>
+
+</div>
