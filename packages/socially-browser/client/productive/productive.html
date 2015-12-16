@@ -1,17 +1,42 @@
 
 {{ad}}
+<md-content layout="row" layout-align="center center" layout-fill layout-margin>
 
-<div style="max-width: 600px;">
-<md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2> Create a new party</h2>
-        <span flex></span>
-      </div>
-</md-toolbar>
+	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2" layout-fill>
+	<md-toolbar layout="column">
+	      <div class="md-toolbar-tools" >
+	        <h2> Create a new party sadada asda</h2>
+	        <span flex></span>
+	      </div>
+	</md-toolbar>
 
-</div>
+	<md-content md-theme="docs-dark" layout="row" layout-padding>    
+	      <md-input-container flex>
+	        <label>Title</label>
+	        <input ng-model="user.title">
+	      </md-input-container>
+	      <md-input-container flex>
+	        <label>Email</label>
+	        <input ng-model="user.email" type="email">
+	      </md-input-container>
+	      
+  	</md-content>
 
+	<div>
+		<md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+		  <span md-highlight-text="searchText">{{item.display}}</span>
+		</md-autocomplete>	
+	</div>
+	
 
-<md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-  <span md-highlight-text="searchText">{{item.display}}</span>
-</md-autocomplete>
+	<div>
+	  <md-button ng-click="dynamicTheme = 'default'">Default</md-button>
+	  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
+		  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
+		  	<md-button class="md-primary">I'm dynamic</md-button>
+		  </div>
+	</div>
+
+	</md-whiteframe>
+
+</md-content>
