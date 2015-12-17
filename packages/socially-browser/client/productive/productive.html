@@ -1,8 +1,6 @@
 
 {{ad}}{{myDate}}
-<div ng-repeat="line in lines">
- Step {{line.index}} status : {{line.ss}}
-</div>
+
 <br>
 
 <md-content layout="row" layout-align="center center" layout-fill layout-margin>
@@ -17,7 +15,7 @@
 
 	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch>
 	    
-	      <md-input-container flex>
+	      <md-input-container  layout-align="center center" >
 
 	      <label>線別</label>
          	 <md-select ng-model="user.lines">
@@ -27,14 +25,95 @@
             </md-select>
 	       
 	      </md-input-container>
-	      <md-input-container flex>
-	        <label>Email</label>
-	        <input ng-model="user.email" type="email">
-	      </md-input-container>
+	     
 	 	 <md-datepicker ng-model="myDate" md-placeholder="Enter date"
-       	 md-min-date="minDate" md-max-date="maxDate">
+       	 md-min-date="minDate" md-max-date="maxDate" ng-style="">
         	</md-datepicker>
     </md-content>
+    <md-content layout="row" layout-padding>
+    	<md-input-container>
+    		<label>工號</label>
+    		<input ng-model="" type="text" >
+    	</md-input-container>
+
+
+    	<md-input-container>
+
+    		<label>品名</label>
+    		<input ng-model="" type="text" >
+
+    	</md-input-container>
+
+    	<md-input-container>
+
+    		<label>料號</label>
+    		<input ng-model="" type="text" >
+    		
+    	</md-input-container>
+
+    </md-content>
+
+    <md-content layout="row" layout-padding>
+    	<md-input-container>
+    		<label>投入量</label>
+    		<input ng-model="" type="text" >
+    	</md-input-container>
+
+
+    	<md-input-container>
+
+    		<label>批量</label>
+    		<input ng-model="" type="text" >
+
+    	</md-input-container>
+
+    </md-content> 
+
+
+    <md-content layout="row" layout-padding>
+    	<md-input-container>
+    		<label>良品</label>
+    		<input ng-model="" type="text" >
+    	</md-input-container>
+
+
+    	<md-input-container>
+
+    		<label>累積</label>
+    		<input ng-model="" type="text" >
+
+    	</md-input-container>
+    	    	<md-input-container>
+    		<label>不良品</label>
+    		<input ng-model="" type="text" >
+    	</md-input-container>
+
+
+    	<md-input-container>
+
+    		<label>未完成品</label>
+    		<input ng-model="" type="text" >
+
+    	</md-input-container>
+
+    </md-content>
+
+        <md-content layout="row" layout-padding>
+    	<md-input-container>
+    		<label>開始時間</label>
+    		<input ng-model="" type="text" >
+    	</md-input-container>
+
+
+    	<md-input-container>
+
+    		<label>結束時間</label>
+    		<input ng-model="" type="text" >
+
+    	</md-input-container>
+
+    </md-content>
+
 
 
 
