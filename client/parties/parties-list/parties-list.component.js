@@ -164,11 +164,7 @@ angular.module('socially').directive('partiesList', function () {
         });
       };
 
-      this.openit = function(){
-
-       $mdSidenav('right').toggle();
-
-      };
+     
       
 
       this.isRSVP = (rsvp, party) => {

@@ -18,6 +18,36 @@ angular.module('socially').directive('productive', function () {
       $reactive(this).attach($scope);
 
 
+
+      
+      this.helpers({
+        parties: () => {
+          return Parties.find({}, {sort: this.sort});
+        },
+        users: () => {
+          return Meteor.users.find({});
+        },
+        partiesCount: () => {
+          return Counts.get('numberOfParties');
+        },
+        page: 1,
+        sort: {
+          name: 1
+        },
+        searchText: '',
+        isLoggedIn: () => {
+          return Meteor.userId() !== null;
+        },
+        currentUserId: () => {
+          return Meteor.userId();
+        },
+        images: () => {
+          return Images.find({});
+        }
+      });
+
+
+
        $scope.myDate = new Date();
        $scope.minDate = new Date(
 
