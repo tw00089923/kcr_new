@@ -55,8 +55,17 @@ angular.module('socially').directive('productive', function () {
       $scope.myDate.getMonth() - 2,
       $scope.myDate.getDate());
 
+      $scope.works=[];
 
-  $scope.maxDate = new Date(
+      $scope.adaa = document.querySelector('#fors');
+      $scope.adab = angular.element('#fors').scope();
+
+      $scope.starttime = moment();
+
+
+
+
+      $scope.maxDate = new Date(
       $scope.myDate.getFullYear(),
       $scope.myDate.getMonth() + 2,
       $scope.myDate.getDate());
@@ -65,19 +74,42 @@ angular.module('socially').directive('productive', function () {
         return { ss : name};
       });
 
-      $scope.items = [1,2,3,4,5];
-      $scope.selected = [];
-      $scope.toggle = function (item, list) {
-        var idx = list.indexOf(item);
-        if (idx > -1) list.splice(idx, 1);
-        else list.push(item);
-      };
-      $scope.exists = function (item, list) {
-        return list.indexOf(item) > -1;
-      };
-
+       $scope.showAlert = function() {
+       
+       var confirm = $mdDialog.confirm()
+          $mdDialog.show({
+          template: '<add-new-party-modal></add-new-party-modal>',
+          clickOutsideToClose: true
+       
+    });
+    
+  };
   
-    }
+    $scope.check2 = function() {
+         var confirm = $mdDialog.confirm().title('Would you like to delete your debt?')
+         .ok('Please do it!')
 
+         .ariaLabel('Lucky day')
+         .cancel('Sounds like a scam');
+         $mdDialog.show(confirm);
+    };
+
+
+
+
+
+
+    $scope.expression = function(){
+
+      if ($scope.works) {
+          $scope.list.push(this.work);
+          $scope.text = '';
+        };
+
+    };
+
+
+
+    }
   }
 });

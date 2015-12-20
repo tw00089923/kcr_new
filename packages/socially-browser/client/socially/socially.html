@@ -44,29 +44,21 @@
 
   <div class="navbar-right navbar-text">
     
-    <md-button ng-href="/login" ng-hide="socially.isLoggedIn">Login </md-button>
-    <md-button ng-href="/register" ng-hide="socially.isLoggedIn">Sign up</md-button>
+    <md-button ng-href="/login" ng-hide="socially.isLoggedIn">
+      <md-icon md-svg-icon="action:ic_perm_identity_24px"></md-icon>登入</md-button>
+    <md-button ng-href="/register" ng-hide="socially.isLoggedIn">
+      <md-icon md-svg-icon="action:ic_account_child_24px"></md-icon>註冊</md-button>
     <div ng-show="socially.isLoggedIn">{{ socially.currentUser | displayName }}</div>
     <md-button ng-click="socially.logout()" ng-show="socially.isLoggedIn">Logout</md-button>
     
   </div>
 </md-toolbar>
 
-<div>
-
-{{adad}}
-</div>
 
 
 
 
 
 
+<div ui-view flex-gt-sm layout-gt-sm="row" layout-fill ></div>
 
-
-<div layout="row" layout-xs="column">
-
-
-<div ui-view flex-gt-sm layout-gt-sm="row"></div>
-
-</div>
