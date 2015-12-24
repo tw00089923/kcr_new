@@ -4,22 +4,28 @@
 <br>
 {{starttime | timetransform}}
 <br>
-value:{{adaa}}
-{{adab}}
+
 <br>
 {{works}}
 <br>
-
+{{books}}
 {{work}}
 <br>
+{{productive.books}}
+{{productive.users}}
+{{partiesCount}}
 <div layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
 <md-content layout="row" layout-align="center center" layout-fill layout-margin flex layout-wrap>
 	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2 produ" layout-fill layout-margin>
-	<md-toolbar layout="column">
-	      <div class="md-toolbar-tools" >
+	<md-toolbar layout="row">
+	      <div class="md-toolbar-tools" flex="50">
 	        <h2> 生產日報表輸入</h2>
 	        <span flex></span>
 	      </div>
+          <div class="md-toolbar-tools" flex="50">
+            <h2>生產報表累積</h2>  <a ui-sref="/d3"><span> {{works.length}}</span></a>
+
+          </div>
 	</md-toolbar>
     <div layout="column" layout-fill layout-margin class="">
 	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch >
@@ -64,7 +70,7 @@ value:{{adaa}}
     <md-content layout="row" layout-padding>
     	<md-input-container>
     		<label>投入量</label>
-    		<input ng-model="work.work_input" type="number" >
+    		<input ng-model="work.work_input" type="number" id="work_input">
     	</md-input-container>
 
 
@@ -124,13 +130,14 @@ value:{{adaa}}
 
             <md-input-container>
                 <label>除外工時（分）</label>
-                <input ng-model="work.othertime" type="number">
+                <input ng-model="work.othertime" type="number" required>
             </md-input-container>
 
 
             <md-input-container id="howard">
                 <label>除外工時原因</label>
-                <input ng-model="work.othertimereason" type="text">
+              
+                <textarea ng-model="work.othertimereason"></textarea>
             </md-input-container>
 
         </md-content>   
@@ -139,7 +146,9 @@ value:{{adaa}}
 
         <md-content layout="column">
 
-            <md-button ng-click="works.push(work);work=[]">push item</md-button>
+            <md-button ng-click="works.push(work);work={}" >存檔</md-button>
+            <md-button ng-click="works.pop()">刪除上一個存檔</md-button>
+            <md-button ng-click="update()">上傳</md-button>
             <md-button ng-click="showAlert()">Check</md-button>
             <md-button ng-click="check2()">Alert</md-button>
 
@@ -150,8 +159,7 @@ value:{{adaa}}
 
 
 
-
-	<div layout="column" layout-fill layout-margin>
+	<div layout="column" layout-fill layout-margin >
 	  <md-button class="md-primary" ng-click="dynamicTheme = 'default'">Default</md-button>
 	  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
 	  <md-button ng-click="dynamicTheme = 'docs-dark'">docs-dark</md-button>

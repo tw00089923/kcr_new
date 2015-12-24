@@ -21,6 +21,10 @@ angular.module('socially').directive('productive', function () {
 
       
       this.helpers({
+        books: () => {
+          return Books.find({});            
+        },
+
         parties: () => {
           return Parties.find({}, {sort: this.sort});
         },
@@ -46,6 +50,10 @@ angular.module('socially').directive('productive', function () {
         }
       });
 
+        this.subscribe('books');
+        this.subscribe('parties');
+        this.subscribe('users');
+
 
 
        $scope.myDate = new Date();
@@ -57,9 +65,7 @@ angular.module('socially').directive('productive', function () {
 
       $scope.works=[];
 
-      $scope.adaa = document.querySelector('#fors');
-      $scope.adab = angular.element('#fors').scope();
-
+      this.work={};
       $scope.starttime = moment();
 
 
@@ -94,8 +100,18 @@ angular.module('socially').directive('productive', function () {
          $mdDialog.show(confirm);
     };
 
+    $scope.clearwork = function (a){
+
+      work.splice(indexof(a),1);
+    };
 
 
+
+    this.update = (a) => {
+
+
+        Parties.insert({name:'howard'});
+      };
 
 
 
@@ -107,6 +123,8 @@ angular.module('socially').directive('productive', function () {
         };
 
     };
+
+
 
 
 
