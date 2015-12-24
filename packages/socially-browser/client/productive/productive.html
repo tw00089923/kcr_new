@@ -8,167 +8,174 @@
 <br>
 {{works}}
 <br>
-{{books}}
-{{work}}
+
 <br>
 {{productive.books}}
-{{productive.users}}
-{{partiesCount}}
-<div layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
-<md-content layout="row" layout-align="center center" layout-fill layout-margin flex layout-wrap>
-	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2 produ" layout-fill layout-margin>
-	<md-toolbar layout="row">
-	      <div class="md-toolbar-tools" flex="50">
-	        <h2> 生產日報表輸入</h2>
-	        <span flex></span>
-	      </div>
-          <div class="md-toolbar-tools" flex="50">
-            <h2>生產報表累積</h2>  <a ui-sref="/d3"><span> {{works.length}}</span></a>
 
-          </div>
-	</md-toolbar>
-    <div layout="column" layout-fill layout-margin class="">
-	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch >
-	    
-	      <md-input-container  layout-align="center center" >
+<div ng-repeat = "vm in productive.books">
 
-	      <label>線別</label>
-         	 <md-select ng-model="work.line">
-              <md-option ng-repeat="line in lines" value="{{line.ss}}">
-                {{line.ss}}
-              </md-option>
-            </md-select>
-	       
-	      </md-input-container>
-	     
-	 	 <md-datepicker ng-model="work.date" md-placeholder="Enter date"
-       	 md-min-date="minDate" md-max-date="maxDate" ng-style="">
-        	</md-datepicker>
-    </md-content>
-    <md-content layout="row" layout-padding>
-    	<md-input-container>
-    		<label>工號</label>
-    		<input ng-model="work.work_number" type="text" >
-    	</md-input-container>
+    <div ng-repeat = "a  in vm.daywork">
+           {{a.lottos}}
+    </div>
 
-    	<md-input-container>
-
-    		<label>品名</label>
-    		<input ng-model="work.work_name" type="text" >
-
-    	</md-input-container>
-
-    	<md-input-container>
-
-    		<label>料號</label>
-    		<input ng-model="work.material" type="text" >
-    		
-    	</md-input-container>
-
-    </md-content>
-
-    <md-content layout="row" layout-padding>
-    	<md-input-container>
-    		<label>投入量</label>
-    		<input ng-model="work.work_input" type="number" id="work_input">
-    	</md-input-container>
+</div>
 
 
-    	<md-input-container>
+<form layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
+    <md-content layout="row" layout-align="center center" layout-fill layout-margin flex layout-wrap>
+    	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2 produ" layout-fill layout-margin>
+    	<md-toolbar layout="row">
+    	      <div class="md-toolbar-tools" flex="50">
+    	        <h2> 生產日報表輸入</h2>
+    	        <span flex></span>
+    	      </div>
+              <div class="md-toolbar-tools" flex="50">
+                <h2>生產報表累積</h2>  <a href="/d3"><span> {{works.length}}</span></a>
 
-    		<label>批量</label>
-    		<input ng-model="work.lottos" type="number" >
+              </div>
+    	</md-toolbar>
+        <div layout="column" layout-fill layout-margin class="">
+    	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch >
+    	    
+    	      <md-input-container  layout-align="center center" >
 
-    	</md-input-container>
+    	      <label>線別</label>
+             	 <md-select ng-model="work.line">
+                  <md-option ng-repeat="line in lines" value="{{line.ss}}" required>
+                    {{line.ss}}
+                  </md-option>
+                </md-select>
+    	       
+    	      </md-input-container>
+    	     
+    	 	 <md-datepicker ng-model="work.date" md-placeholder="Enter date"
+           	 md-min-date="minDate" md-max-date="maxDate" ng-style="" required>
+            	</md-datepicker>
+        </md-content>
+        <md-content layout="row" layout-padding>
+        	<md-input-container>
+        		<label>工號</label>
+        		<input ng-model="work.work_number" type="text" required>
+        	</md-input-container>
 
-    </md-content> 
+        	<md-input-container>
 
+        		<label>品名</label>
+        		<input ng-model="work.work_name" type="text" required>
 
-    <md-content layout="row" layout-padding>
-    	<md-input-container>
-    		<label>良品</label>
-    		<input ng-model="work.goodnumber" type="number" >
-    	</md-input-container>
+        	</md-input-container>
 
+        	<md-input-container>
 
-    	<md-input-container>
+        		<label>料號</label>
+        		<input ng-model="work.material" type="text" required>
+        		
+        	</md-input-container>
 
-    		<label>累積</label>
-    		<input ng-model="work.accumlation" type="number">
-            
-
-    	</md-input-container>
-    	    	<md-input-container>
-    		<label>不良品</label>
-    		<input ng-model="work.badnumber" type="number" >
-    	</md-input-container>
-
-
-    	<md-input-container>
-
-    		<label>未完成品</label>
-    		<input ng-model="work.unfinished" type="number" >
-
-    	</md-input-container>
-
-    </md-content>
+        </md-content>
 
         <md-content layout="row" layout-padding>
         	<md-input-container>
-        		<label>耗時（分）</label>
-        		<input ng-model="work.worktime" type="number">
+        		<label>投入量</label>
+        		<input ng-model="work.work_input" type="number" id="work_input" required>
         	</md-input-container>
 
 
-            <md-input-container>
+        	<md-input-container>
 
-                <label>標工時間</label>
-                <input ng-model="work.standtime" id="standtime" type="number" >
+        		<label>批量</label>
+        		<input ng-model="work.lottos" type="number" required>
 
-            </md-input-container>
+        	</md-input-container>
 
-
-            <md-input-container>
-                <label>除外工時（分）</label>
-                <input ng-model="work.othertime" type="number" required>
-            </md-input-container>
+        </md-content> 
 
 
-            <md-input-container id="howard">
-                <label>除外工時原因</label>
-              
-                <textarea ng-model="work.othertimereason"></textarea>
-            </md-input-container>
+        <md-content layout="row" layout-padding>
+        	<md-input-container>
+        		<label>良品</label>
+        		<input ng-model="work.goodnumber" type="number" required>
+        	</md-input-container>
 
-        </md-content>   
-        <p id="fors">
- {{100*(work.goodnumber* work.standtime)/(work.worktime-work.othertime) | number:0}} %</p>    	
 
-        <md-content layout="column">
+        	<md-input-container>
 
-            <md-button ng-click="works.push(work);work={}" >存檔</md-button>
-            <md-button ng-click="works.pop()">刪除上一個存檔</md-button>
-            <md-button ng-click="update()">上傳</md-button>
-            <md-button ng-click="showAlert()">Check</md-button>
-            <md-button ng-click="check2()">Alert</md-button>
+        		<label>累積</label>
+        		<input ng-model="work.accumlation" type="number" required>
+                
 
-          
-            
+        	</md-input-container>
+        	    	<md-input-container>
+        		<label>不良品</label>
+        		<input ng-model="work.badnumber" type="number" required>
+        	</md-input-container>
+
+
+        	<md-input-container>
+
+        		<label>未完成品</label>
+        		<input ng-model="work.unfinished" type="number" required>
+
+        	</md-input-container>
+
         </md-content>
-    </div>
+
+            <md-content layout="row" layout-padding>
+            	<md-input-container>
+            		<label>耗時（分）</label>
+            		<input ng-model="work.worktime" type="number" required>
+            	</md-input-container>
+
+
+                <md-input-container>
+
+                    <label>標工時間</label>
+                    <input ng-model="work.standtime" id="standtime" type="number" required>
+
+                </md-input-container>
+
+
+                <md-input-container>
+                    <label>除外工時（分）</label>
+                    <input ng-model="work.othertime" type="number" required>
+                </md-input-container>
+
+
+                <md-input-container id="howard">
+                    <label>除外工時原因</label>
+                  
+                    <textarea ng-model="work.othertimereason"></textarea>
+                </md-input-container>
+
+            </md-content>   
+            <p id="fors">
+     {{100*(work.goodnumber* work.standtime)/(work.worktime-work.othertime) | number:0}} %</p>    	
+
+            <md-content layout="column">
+
+                <md-button ng-click="works.push(work) ; work={}" ng-submit>存檔</md-button>
+                <md-button ng-click="works.pop()">刪除上一個存檔</md-button>
+                <md-button ng-click="update()">上傳</md-button>
+                <md-button ng-click="showAlert()">Check</md-button>
+                <md-button ng-click="check2()">Alert</md-button>
+
+              
+                
+            </md-content>
+        </div>
 
 
 
-	<div layout="column" layout-fill layout-margin >
-	  <md-button class="md-primary" ng-click="dynamicTheme = 'default'">Default</md-button>
-	  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
-	  <md-button ng-click="dynamicTheme = 'docs-dark'">docs-dark</md-button>
-		  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
-		  	<md-button class="md-primary">I'm dynamic &nbsp; {{dynamicTheme }}</md-button>
-		  </div>
-	</div>
+    	<div layout="column" layout-fill layout-margin >
+    	  <md-button class="md-primary" ng-click="dynamicTheme = 'default'">Default</md-button>
+    	  <md-button ng-click="dynamicTheme = 'altTheme'">altTheme</md-button>
+    	  <md-button ng-click="dynamicTheme = 'docs-dark'">docs-dark</md-button>
+    		  <div md-theme="{{ dynamicTheme }}" md-theme-watch>
+    		  	<md-button class="md-primary">I'm dynamic &nbsp; {{dynamicTheme }}</md-button>
+    		  </div>
+    	</div>
 
-	</md-whiteframe>
+    	</md-whiteframe>
 
-</md-content>
-</div>
+    </md-content>
+</form>

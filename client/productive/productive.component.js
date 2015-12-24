@@ -19,9 +19,10 @@ angular.module('socially').directive('productive', function () {
 
 
 
+        
       
       this.helpers({
-        books: () => {
+        books: function() {
           return Books.find({});            
         },
 
@@ -65,7 +66,7 @@ angular.module('socially').directive('productive', function () {
 
       $scope.works=[];
 
-      this.work={};
+      $scope.work=[];
       $scope.starttime = moment();
 
 
@@ -105,13 +106,27 @@ angular.module('socially').directive('productive', function () {
       work.splice(indexof(a),1);
     };
 
+    $scope.addwork =function(){
 
+        $scope.works.push($scope.work);
+        $scope.work=[];
 
-    this.update = (a) => {
+    };
 
+    $scope.update = function() {
 
-        Parties.insert({name:'howard'});
+      if( $scope.works.length >= 1 ){
+        Books.insert({daywork : $scope.works});
+        $scope.works=[];
+           }
+
+      else {
+        console.log("MASSAGE");
+             }
+        
+
       };
+  
 
 
 
