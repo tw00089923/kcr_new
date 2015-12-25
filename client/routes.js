@@ -30,10 +30,10 @@ angular.module('socially')
         template: '<productive></productive>'
       })
       .state('d3', {
-        url: '/d3',
+        url: '/d3/:',
         template: '<d3></d3>'
       })
-       .state('show_detail', {
+       .state('show_detail/:bookId', {
         url: '/show_detail',
         template: '<showdetail></showdetail>'
       })

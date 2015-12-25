@@ -6,7 +6,7 @@ angular.module('socially').directive('showdetail', function () {
         return '/packages/socially-mobile/client/productive/socially.html';
       }
       else{
-        return '/packages/socially-browser/client/productive/productive.html';
+        return '/packages/socially-browser/client/productive/show_detail.html';
       }
       
     },
