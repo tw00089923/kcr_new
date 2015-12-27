@@ -37,6 +37,8 @@ Package.onUse(function(api) {
     'client/styles/main.less',
     'client/d3/d3.component.js',
     'client/d3/d3.html',
+    'client/productive/showdetail.component.js',
+    'client/productive/showdetail.html',
     'client/productive/productive.html'
   ], 'client');
 });

@@ -11,7 +11,7 @@ angular.module('socially').directive('productive', function () {
       
     },
     controllerAs: 'productive',
-    controller: function ($scope, $reactive,$timeout, $mdSidenav,$log, $mdDialog) {
+    controller: function ($scope, $reactive,$timeout, $mdSidenav,$log, $mdDialog,$mdToast) {
 
     
 
@@ -66,10 +66,9 @@ angular.module('socially').directive('productive', function () {
 
       $scope.works=[];
 
-      $scope.work=[];
       $scope.starttime = moment();
 
-
+      this.work ={};
 
 
       $scope.maxDate = new Date(
@@ -108,8 +107,6 @@ angular.module('socially').directive('productive', function () {
 
     $scope.addwork =function(){
 
-        $scope.works.push($scope.work);
-        $scope.work=[];
 
     };
 
@@ -126,7 +123,7 @@ angular.module('socially').directive('productive', function () {
         
 
       };
-  
+
 
 
 
@@ -139,6 +136,28 @@ angular.module('socially').directive('productive', function () {
 
     };
 
+
+    $scope.deletethis= function (a) {
+          $scope.works.splice($scope.works.indexOf(a), 1);
+
+        };
+
+
+      this.checkelement = function () {
+        $mdDialog.show({
+          template: '<showdetail></showdetail>',
+          clickOutsideToClose: false
+        });
+      };
+
+
+
+     /* this.checkelement = function () {
+        $mdDialog.show({
+          template: '<showdetail></showdetail>',
+          clickOutsideToClose: false
+        });
+      }; */
 
 
 

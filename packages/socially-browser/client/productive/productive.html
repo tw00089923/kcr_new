@@ -1,5 +1,5 @@
 
-{{ad}}{{myDate}}
+<!--{{ad}}{{myDate}}
 {{status}}
 <br>
 {{starttime | timetransform}}
@@ -10,8 +10,7 @@
 <br>
 
 <br>
-{{productive.books}}
-
+*/
 <div ng-repeat = "vm in productive.books">
 
     <div ng-repeat = "a  in vm.daywork">
@@ -19,8 +18,8 @@
     </div>
 
 </div>
-
-
+-->
+{{works}}
 <form layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
     <md-content layout="row" layout-align="center center" layout-fill layout-margin flex layout-wrap>
     	<md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="50" flex-xs="50" class="md-whiteframe-z2 produ" layout-fill layout-margin>
@@ -29,10 +28,7 @@
     	        <h2> 生產日報表輸入</h2>
     	        <span flex></span>
     	      </div>
-              <div class="md-toolbar-tools" flex="50">
-                <h2>生產報表累積</h2>  <a href="/show_detail"><span> {{works.length}}</span></a>
-
-              </div>
+           
     	</md-toolbar>
         <div layout="column" layout-fill layout-margin class="">
     	<md-content md-theme="{{ dynamicTheme }}" layout="row" layout-padding md-theme-watch >
@@ -148,12 +144,17 @@
                 </md-input-container>
 
             </md-content>   
-            <p id="fors">
-     {{100*(work.goodnumber* work.standtime)/(work.worktime-work.othertime) | number:0}} %</p>    	
-
+            <md-content layout="column" ng-repeat=" some in works">
+                <p id="fors">
+           
+         {{some.work_name}}:{{100*(some.goodnumber* some.standtime)/(some.worktime-some.othertime) | number:0}} %
+                <md-button class="btn1" ng-click="works.splice(1,1)"> <span>X {{$index}}</span>
+                </md-button>
+                </p>    	
+            </md-content>
             <md-content layout="column">
 
-                <md-button ng-click="works.push(work) ; work={}" ng-submit>存檔</md-button>
+                <md-button ng-click="works.push(work) ; work={}" ng-submit>存檔<span> {{works.length}}</span></md-button>
                 <md-button ng-click="works.pop()">刪除上一個存檔</md-button>
                 <md-button ng-click="update()">上傳</md-button>
                 <md-button ng-click="showAlert()">Check</md-button>
