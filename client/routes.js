@@ -33,9 +33,9 @@ angular.module('socially')
         url: '/d3',
         template: '<d3></d3>'
       })
-       .state('show', {
-        url: '/show',
-        template: '<show></show>'
+       .state('showdetail', {
+        url: '/showdetail',
+        template: '<showdetail></showdetail>'
       })
       .state('register', {
         url: '/register',
