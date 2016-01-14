@@ -138,7 +138,7 @@ angular.module('socially').directive('productive', function () {
 
 
     $scope.deletethis= function (a) {
-          $scope.works.splice($scope.works.indexOf(a), 1);
+          $scope.works.splice(0, 1);
 
         };
 

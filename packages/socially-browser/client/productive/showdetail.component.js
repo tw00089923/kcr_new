@@ -20,7 +20,10 @@ angular.module('socially.browser').directive('showdetail', function () {
         $mdDialog.hide();
       };
 
-      
+
+    var div1=d3.select(document.getElementById('svg1'));
+
+
 
 
 
