@@ -6,6 +6,12 @@ angular.module("socially.browser").directive('d3', function() {
     controller: function ($scope, $reactive, $state) {
       $reactive(this).attach($scope);
 
+
+
+       $('#calendar').fullCalendar({
+        // put your options and callbacks here
+       })
+
       this.credentials = {
         email: '',
         password: ''
