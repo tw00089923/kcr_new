@@ -153,7 +153,7 @@
                 </p>    	
             </md-content>
             <md-content layout="column">
-
+                 <md-button ng-click="emailsend()">email</md-button>
                 <md-button ng-click="works.push(work) ; work={}" ng-submit>存檔<span> {{works.length}}</span></md-button>
                 <md-button ng-click="works.pop()">刪除上一個存檔</md-button>
                 <md-button ng-click="update()">上傳</md-button>

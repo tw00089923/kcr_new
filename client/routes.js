@@ -37,6 +37,10 @@ angular.module('socially')
         url: '/showdetail',
         template: '<showdetail></showdetail>'
       })
+        .state('home', {
+        url: '/hmoe',
+        template: '<home></home>'
+      })
       .state('register', {
         url: '/register',
         template: '<register></register>'

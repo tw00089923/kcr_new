@@ -149,9 +149,11 @@ angular.module('socially').directive('productive', function () {
           clickOutsideToClose: false
         });
       };
-
-
-
+$scope.emailsend = function(){
+      Meteor.call('sendEmail','liaowenhao@kcr.com.tw','liaowenhao@kcr.com.tw','Hello howard','hello');
+          
+      console.log("E-mail successed");
+          };
      /* this.checkelement = function () {
         $mdDialog.show({
           template: '<showdetail></showdetail>',
