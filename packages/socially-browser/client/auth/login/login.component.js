@@ -12,6 +12,13 @@ angular.module('socially.browser').directive('login', function() {
       };
 
       this.error = '';
+      
+      this.users = () =>
+      {
+        return Meteor.users.find({});
+      };
+
+
 
       this.login = () => {
         Meteor.loginWithPassword(this.credentials.email, this.credentials.password, (err) => {

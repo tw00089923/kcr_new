@@ -12,7 +12,7 @@ angular.module("socially.browser").directive('register', function() {
       };
 
       this.error = '';
-
+      
       this.register = () => {
         Accounts.createUser(this.credentials, (err) => {
           if (err) {
