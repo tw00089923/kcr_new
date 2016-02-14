@@ -35,8 +35,8 @@ Package.onUse(function(api) {
     'client/parties/parties-list/parties-list.import.less',
     'client/parties/add-new-party-modal/add-new-party-modal.import.less',
     'client/styles/main.less',
-    'client/d3/d3.component.js',
-    'client/d3/d3.html',
+    'client/calendar/calendar.component.js',
+    'client/calendar/calendar.html',
     'client/productive/showdetail.component.js',
     'client/productive/showdetail.html',
     'client/productive/productive.html'

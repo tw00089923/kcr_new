@@ -29,9 +29,9 @@ angular.module('socially')
         url: '/productive',
         template: '<productive></productive>'
       })
-      .state('d3', {
-        url: '/d3',
-        template: '<d3></d3>'
+      .state('calendar', {
+        url: '/calendar',
+        template: '<calendar></calendar>'
       })
        .state('showdetail', {
         url: '/showdetail',
