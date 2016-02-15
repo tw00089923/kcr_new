@@ -11,6 +11,7 @@ let modulesToLoad =  [
   'angular-sortable-view',
   'ngMessages'
 
+
 ];
 
 if (Meteor.isCordova) {

@@ -25,6 +25,10 @@ angular.module('socially')
         url: '/login',
         template: '<login></login>'
       })
+      .state('qrcode', {
+        url: '/qrcode',
+        template: '<qrcode></qrcode>'
+      })
       .state('productive', {
         url: '/productive',
         template: '<productive></productive>'

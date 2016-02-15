@@ -21,7 +21,7 @@ angular.module("socially.browser").directive('calendar', function() {
         }
       });
 
-       
+     
 
         $('#calendar').fullCalendar({
 

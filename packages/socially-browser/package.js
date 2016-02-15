@@ -39,7 +39,8 @@ Package.onUse(function(api) {
     'client/calendar/calendar.html',
     'client/productive/showdetail.component.js',
     'client/productive/showdetail.html',
-    'client/productive/productive.html'
+    'client/productive/productive.html',
+    'client/qrcode/qrcoderead.html'
   ], 'client');
 });
 

@@ -1,0 +1,40 @@
+
+
+{{qrcode.qrcodereader}}
+{{qrcode.qrcodename}}
+{{qrcode.image}}
+<div layout="column" layout-fill layout-margin style="margin-top:10px;margin-left:10 px;margin-right:10 px;">
+
+
+
+	<div id="qrcode">
+				
+	</div>
+
+
+	<div layout="column">
+
+		<div>
+		<md-content>
+        
+        	<md-input-container>
+
+        		<label>工單號碼</label>
+        		<input ng-model="qrcode.qrcodename" type="text" required>
+
+        	</md-input-container>
+
+      
+
+
+			<md-button ng-click="qrcode.qrcodeinsert()">
+
+						Click add
+
+			</md-button>
+			
+			</md-content>
+			
+		</div>
+	</div>
+</div>

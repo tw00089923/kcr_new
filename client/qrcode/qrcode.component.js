@@ -1,16 +1,16 @@
-angular.module('socially').directive('productive', function () {
+angular.module('socially').directive('qrcode', function () {
   return {
     restrict: 'E',
     templateUrl: () => {
       if (Meteor.isCordova) {
-        return '/packages/socially-mobile/client/productive/socially.html';
+        return '/packages/socially-mobile/client/qrcode/qrcode.html';
       }
       else{
-        return '/packages/socially-browser/client/productive/productive.html';
+        return '/packages/socially-browser/client/qrcode/qrcoderead.html';
       }
       
     },
-    controllerAs: 'productive',
+    controllerAs: 'qrcode',
     controller: function ($scope, $reactive,$timeout, $mdSidenav,$log, $mdDialog,$mdToast) {
 
     
@@ -55,10 +55,28 @@ angular.module('socially').directive('productive', function () {
         this.subscribe('parties');
         this.subscribe('users');
 
+    
+     
+        
 
+        this.qrcodeinsert = () =>{
 
+          var abc =["www.google.com","www.yahoo.com","www.hotmail.com"];
+          this.qrcodename = '';
+          var aps = this.qrcodename ;
+         
+          abc.push(aps);
 
+    
+          
+          for(i =0 ; i < abc.length ; i++ ){
+          $('#qrcode').qrcode({width: 64,height: 64,text:abc[i]});
 
+           };
+          
+        };
+
+        
     }
   }
 });
