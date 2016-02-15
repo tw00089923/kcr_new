@@ -42,7 +42,7 @@ angular.module('socially')
         template: '<showdetail></showdetail>'
       })
         .state('home', {
-        url: '/hmoe',
+        url: '/home',
         template: '<home></home>'
       })
       .state('register', {
@@ -54,7 +54,7 @@ angular.module('socially')
         template: '<resetpw></resetpw>'
       });
 
-    $urlRouterProvider.otherwise("/parties");
+    $urlRouterProvider.otherwise("/home");
   })
   .run(function ($rootScope, $state) {
     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {

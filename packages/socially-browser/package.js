@@ -40,7 +40,8 @@ Package.onUse(function(api) {
     'client/productive/showdetail.component.js',
     'client/productive/showdetail.html',
     'client/productive/productive.html',
-    'client/qrcode/qrcoderead.html'
+    'client/qrcode/qrcoderead.html',
+    'client/home/home.html',
   ], 'client');
 });
 

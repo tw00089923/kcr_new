@@ -7,7 +7,7 @@ angular.module('socially').directive('home', function () {
         return '/packages/socially-mobile/client/home/home.html';
       }
       else {
-        return '/packages/socially-browser/client/socially/socially.html';
+        return '/packages/socially-browser/client/home/home.html';
       }
     },
     controllerAs: 'home',
