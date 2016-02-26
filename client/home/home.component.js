@@ -49,14 +49,26 @@ angular.module('socially').directive('home', function () {
 
 
 
+
+      this.subscribe('users');
+      this.subscribe('calendar');
+
       this.helpers({
-        isLoggedIn: () => {
-          return Meteor.userId() !== null;
+        users: () => {
+          return Meteor.users.find({});
         },
-        currentUser: () => {
-          return Meteor.user();
+         parties: () => {
+            return Parties.find({});
+          },
+        calendars :() =>{
+          return Calendar.find({}).fetch();
         }
       });
+
+      this.theis = angular.forEach(this.calendars, 2);
+
+
+
        
       this.logout = () => {
         Accounts.logout();
