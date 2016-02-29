@@ -42,6 +42,7 @@ Package.onUse(function(api) {
     'client/productive/productive.html',
     'client/qrcode/qrcoderead.html',
     'client/home/home.html',
+    'client/home/home.import.less'
   ], 'client');
 });
 

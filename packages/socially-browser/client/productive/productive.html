@@ -19,9 +19,9 @@
 
 </div>
 -->
-{{works}}
+
 <form layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
-    <md-content layout="row" layout-align="center center" layout-fill layout-margin flex layout-wrap>
+    <md-content layout="row" layout-align="center center" layout-fill layout-margin layout-wrap>
     	<md-whiteframe layout="column" flex flex-md="70" flex-lg="70" flex-gt-lg="70" flex-xs="70" class="md-whiteframe-z2 produ" layout-fill layout-margin>
     	<md-toolbar layout="row">
     	      <div class="md-toolbar-tools" flex="50">
@@ -48,7 +48,7 @@
            	 md-min-date="minDate" md-max-date="maxDate" ng-style="" required>
             	</md-datepicker>
         </md-content>
-        <md-content layout="row" layout-padding>
+        <md-content layout="row" layout-sm="column"  layout-padding>
         	<md-input-container>
         		<label>工號</label>
         		<input ng-model="work.work_number" type="text" required>
