@@ -130,7 +130,7 @@ angular.module('socially').directive('home', function () {
               .attr("class","font-8")
               .attr("x", 5)
               .attr("y", 5)
-            .append("text")
+              .append("text")
               .attr("transform", "rotate(90)")
               .attr("x", 6)
               .attr("dy", ".71em")
@@ -138,6 +138,13 @@ angular.module('socially').directive('home', function () {
               .text("Value ($)");
               
           
+
+
+
+
+
+
+
 
 
 
