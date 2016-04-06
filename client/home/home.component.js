@@ -49,7 +49,7 @@ angular.module('socially').directive('home', function () {
 
 
 
-
+      this.subscribe('books');
       this.subscribe('users');
       this.subscribe('calendar');
 
@@ -139,6 +139,7 @@ angular.module('socially').directive('home', function () {
               
           
 
+              //
 
 
 
@@ -153,11 +154,17 @@ angular.module('socially').directive('home', function () {
 
       this.logout = () => {
         Accounts.logout();
-      }
- 
- 
+      };
+
+
+   
+
+
+    
 
   
+
+
     }
 
   }

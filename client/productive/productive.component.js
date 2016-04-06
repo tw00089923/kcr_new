@@ -18,7 +18,7 @@ angular.module('socially').directive('productive', function () {
       $reactive(this).attach($scope);
 
 
-
+    
         
       
       this.helpers({
@@ -113,16 +113,18 @@ angular.module('socially').directive('productive', function () {
     $scope.update = function() {
 
       if( $scope.works.length >= 1 ){
-        Books.insert({daywork : $scope.works});
-        $scope.works=[];
+        Books.insert($scope.works);
+        $scope.works={};
            }
 
       else {
+        Books.insert({"how":122});
         console.log("MASSAGE");
              }
         
 
       };
+
 
 
 
@@ -141,6 +143,9 @@ angular.module('socially').directive('productive', function () {
           $scope.works.splice(0, 1);
 
         };
+
+
+
 
 
       this.checkelement = function () {

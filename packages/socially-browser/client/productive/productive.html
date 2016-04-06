@@ -19,6 +19,7 @@
 
 </div>
 -->
+1:{{productive.books}}
 
 <form layout="row" layout-fill layout-margin layout-align="center center" name="howard"  ng-submit="expression()">
     <md-content layout="row" layout-align="center center" layout-fill layout-margin layout-wrap>
@@ -143,15 +144,17 @@
                     <textarea ng-model="work.othertimereason"></textarea>
                 </md-input-container>
 
-            </md-content>   
+            </md-content>
+            <!-- 
             <md-content layout="column" ng-repeat=" some in works">
                 <p id="fors">
-           
-         {{some.work_name}}:{{100*(some.goodnumber* some.standtime)/(some.worktime-some.othertime) | number:0}} %
                 <md-button class="btn1" ng-click="works.splice(1,1)"> <span>X {{$index}}</span>
                 </md-button>
                 </p>    	
             </md-content>
+
+             -->
+
             <md-content layout="column" name="howard">
                 <md-button ng-click="works.push(work) ; work={}" class="btn1-primary" ng-submit>存檔<span> {{works.length}}</span></md-button>
            

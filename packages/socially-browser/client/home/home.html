@@ -6,12 +6,34 @@
 	
 		<div layout="column" flex="20" class="single_sidebar " hide-xs>
 			<div hide-xs> 
+			{{home.books}}
+			{{book}}
 			
 				<h5> 工單總覽</h5>
 				<h5> 輸入</h5>
 
 
-			
+				<md-input-container>
+        		<label>Name</label>
+        		<input ng-model="home.books.name" type="text" required>
+        
+        		</md-input-container>
+
+				<md-input-container>
+
+        		<label>Number</label>
+        		<input ng-model="home.books.number" type="number" required>
+        		</md-input-container>
+
+        		<md-content>
+                <md-button ng-click="book.push(books) ; books,book={}" class="btn1-primary">存檔
+                </md-button>
+                 <md-button ng-click="home.uploadbook()" class="btn1-primary" >load
+                </md-button>
+            	</md-content>
+
+
+
 			</div>
 		</div>
 		<div layout="column" flex layout-align="space-between ">
@@ -26,7 +48,7 @@
 				</div>
 				<div flex="20" class="single_bar">
 					<h5 style="text-align: center;">執行天數 :{{home.difnowsdate}} </h5>
-				</div>
+		</div>
 
 
 			
@@ -40,8 +62,8 @@
 			
 			</div>
 
-			<div flex>
-				<div>2</div>
+			<div flex id="booksbar">
+				<div></div>
 			</div>
 
 
